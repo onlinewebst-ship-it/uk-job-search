@@ -4,6 +4,10 @@ Both boards are free to register with and neither asks for a card. You need one
 key set for Adzuna and one key for Reed; you only need the one for the source
 you actually use.
 
+**You do not need both.** One key is enough to run the tool: `--source reed` or
+`--source adzuna`. If one board's registration blocks you, use the other and
+carry on.
+
 The framework reads keys from environment variables and never from a file in
 the repository. If a variable is missing, `jobsearch` exits 1 with a JSON error
 that names the variable, rather than a traceback.
@@ -32,6 +36,32 @@ change). The tool makes one request per page of up to 50 results, so a default
 **What Adzuna gives you:** aggregated adverts from many UK boards, with salary
 fields (sometimes estimated) and a truncated description. See
 `docs/uk-market.md` for the coverage caveats.
+
+### If the signup form won't let you through
+
+Adzuna's registration form is protected by Google reCAPTCHA. A repeated
+"reCAPTCHA verification failed, please try again" is almost always local to the
+browser or the network rather than a problem with the details typed in:
+
+- **Content blockers.** uBlock Origin, AdGuard, Brave Shields, Privacy Badger
+  and similar extensions block the reCAPTCHA script outright. This is the most
+  common cause. Retry in a clean Chrome profile (profile menu → **Add** →
+  **Continue without an account**) or with extensions disabled.
+- **A different browser.** Safari, Firefox or Edge, in a fresh profile, settles
+  in one attempt whether the fault is Chrome-specific.
+- **Third-party cookies.** Chrome blocks them for some profiles and reCAPTCHA
+  needs them. `chrome://settings/cookies` → allow third-party cookies, reload.
+- **VPN or an unusual network.** VPN and datacentre addresses are scored
+  aggressively. Retry on your normal connection.
+- **Hammering it.** reCAPTCHA penalises a browser that keeps failing. Leave it
+  ten minutes rather than retrying immediately.
+
+Do **not** use a CAPTCHA-solving service or an extension that clicks the
+checkbox for you: it breaks Adzuna's terms and risks the account.
+
+If it still refuses, register with **Reed** instead — that page carries no
+CAPTCHA — and run with `--source reed`. Adzuna can be added later; nothing in
+the tool depends on having both keys.
 
 ---
 
