@@ -1,0 +1,57 @@
+{
+  "results": [
+    {
+      "jobId": 51530164,
+      "employerId": 442342,
+      "employerName": "Halcyon Learning",
+      "employerProfileId": 88231,
+      "employerProfileName": "Halcyon Learning",
+      "jobTitle": "AI Trainer",
+      "locationName": "Leeds, West Yorkshire",
+      "minimumSalary": 32000,
+      "maximumSalary": 38000,
+      "currency": "GBP",
+      "expirationDate": "23/11/2026",
+      "date": "24/10/2026",
+      "jobDescription": "Halcyon Learning is hiring an AI Trainer on a 12 month contract to review tutor-facing model output. Part time hours (three days) with hybrid working from our Leeds office.",
+      "applications": 12,
+      "jobUrl": "https://www.reed.co.uk/jobs/ai-trainer/51530164"
+    },
+    {
+      "jobId": 51530999,
+      "employerId": 551002,
+      "employerName": "Orbit Systems",
+      "employerProfileId": null,
+      "employerProfileName": null,
+      "jobTitle": "Data Quality Analyst",
+      "locationName": "Remote",
+      "minimumSalary": null,
+      "maximumSalary": null,
+      "currency": "GBP",
+      "expirationDate": "10/11/2026",
+      "date": "12/10/2026",
+      "jobDescription": "Fully remote data quality role. Audit classification labels and report on error rates.",
+      "applications": 4,
+      "jobUrl": "https://www.reed.co.uk/jobs/data-quality-analyst/51530999"
+    },
+    {
+      "jobId": 51531111,
+      "employerId": 610233,
+      "employerName": "Tidewater Council",
+      "employerProfileId": 90211,
+      "employerProfileName": "Tidewater Council",
+      "jobTitle": "Administrator",
+      "locationName": "Bristol",
+      "minimumSalary": 24000,
+      "maximumSalary": 24000,
+      "currency": "GBP",
+      "expirationDate": "30/09/2026",
+      "date": "01/09/2026",
+      "jobDescription": "Office administrator for the housing team. Permanent, full time, based in Bristol.",
+      "applications": 31,
+      "jobUrl": "https://www.reed.co.uk/jobs/administrator/51531111"
+    }
+  ],
+  "ambiguousLocations": [],
+  "totalResults": 3
+}

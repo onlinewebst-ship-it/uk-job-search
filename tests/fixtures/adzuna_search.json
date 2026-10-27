@@ -1,0 +1,82 @@
+{
+  "__CLASS__": "Adzuna::API::Response::JobSearchResults",
+  "count": 3,
+  "mean": 41250,
+  "results": [
+    {
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "id": "4512345678",
+      "title": "AI Trainer (Remote)",
+      "company": {
+        "__CLASS__": "Adzuna::API::Response::Company",
+        "display_name": "Northwind Analytics Ltd"
+      },
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": ["UK", "London", "Central London"],
+        "display_name": "London, Central London"
+      },
+      "latitude": 51.5072,
+      "longitude": -0.1276,
+      "salary_min": 42000.0,
+      "salary_max": 48000.0,
+      "salary_is_predicted": "0",
+      "description": "Northwind Analytics is hiring an AI Trainer to build evaluation rubrics for our support assistant. Fully remote within the UK, with quarterly team days in London. You will write grading criteria, review model outputs and keep the rubric documentation current.",
+      "created": "2026-10-24T09:12:33Z",
+      "redirect_url": "https://www.adzuna.co.uk/jobs/land/ad/4512345678?utm_medium=api",
+      "contract_type": "permanent",
+      "contract_time": "full_time",
+      "category": {
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "label": "IT Jobs",
+        "tag": "it-jobs"
+      },
+      "adref": "eyJhbGciOiJIUzI1NiJ9"
+    },
+    {
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "id": "4512349999",
+      "title": "Contract Data Annotator",
+      "company": {
+        "__CLASS__": "Adzuna::API::Response::Company",
+        "display_name": "Bright Meridian Consulting"
+      },
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": ["UK", "North West England", "Greater Manchester"],
+        "display_name": "Manchester, Greater Manchester"
+      },
+      "salary_min": 250.0,
+      "salary_max": 300.0,
+      "salary_is_predicted": 1,
+      "description": "Six month day rate contract, outside IR35. Annotate customer support transcripts against a scoring rubric. Part time hours considered for the right candidate.",
+      "created": "2026-10-20T14:03:00Z",
+      "redirect_url": "https://www.adzuna.co.uk/jobs/land/ad/4512349999?utm_medium=api",
+      "contract_type": "contract",
+      "contract_time": "part_time",
+      "category": {
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "label": "IT Jobs",
+        "tag": "it-jobs"
+      }
+    },
+    {
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "id": "4512351111",
+      "title": "Senior Machine Learning Engineer",
+      "company": {
+        "__CLASS__": "Adzuna::API::Response::Company",
+        "display_name": ""
+      },
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": ["UK", "Scotland", "Edinburgh"],
+        "display_name": "Edinburgh, Scotland"
+      },
+      "description": "Build and operate the model platform behind our pricing engine. Hybrid working: three days a week in the Edinburgh office.",
+      "created": "2026-09-01T08:00:00Z",
+      "redirect_url": "https://www.adzuna.co.uk/jobs/land/ad/4512351111?utm_medium=api",
+      "contract_type": "permanent"
+    }
+  ]
+}

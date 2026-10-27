@@ -1,0 +1,26 @@
+# Search state: advert text, tracking status and notes. Personal, never commit.
+state/
+
+# Backups produced by the state store
+*.json.bak
+
+# Keys
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Test and tooling caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# macOS
+.DS_Store
