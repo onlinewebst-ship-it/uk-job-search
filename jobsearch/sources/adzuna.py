@@ -1,7 +1,8 @@
 """Adzuna API v1 client (UK by default, other countries supported).
 
 Docs: https://developer.adzuna.com/docs/search
-Keys: https://developer.adzuna.com/signup  (free tier, no card)
+Keys: https://developer.adzuna.com/signup  (free key = 25 evaluation calls;
+full access is a paid plan shown in the account — see docs/getting-keys.md)
 
 Endpoint used::
 

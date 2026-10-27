@@ -38,9 +38,10 @@ reproduced without an API key.)
 
 - Python **3.9 or newer**. Nothing else. The runtime and the tests use only the
   standard library (`urllib`, `json`, `argparse`, `unittest`, `dataclasses`).
-- A free API key from [Adzuna](https://developer.adzuna.com/signup) and/or
-  [Reed](https://www.reed.co.uk/developers/jobseeker). Step by step:
-  [`docs/getting-keys.md`](docs/getting-keys.md).
+- An API key from [Adzuna](https://developer.adzuna.com/signup) and/or
+  [Reed](https://www.reed.co.uk/developers/jobseeker). Reed's is free; Adzuna's
+  registers free but is evaluation-only (25 calls) until you subscribe. Step by
+  step: [`docs/getting-keys.md`](docs/getting-keys.md).
 
 No `pip install`, no virtualenv required:
 

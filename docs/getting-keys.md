@@ -1,8 +1,11 @@
 # Getting API keys
 
-Both boards are free to register with and neither asks for a card. You need one
-key set for Adzuna and one key for Reed; you only need the one for the source
-you actually use.
+Reed's key is free for this use. Adzuna's key is free to obtain but
+**evaluation-only by default**: the account starts on a Pending Activation plan
+with 25 test calls, and full access is a paid plan shown in your account
+(£8/month for 5,000 calls a month when checked in October 2026 — verify your own
+dashboard, Adzuna varies limits). You need one key set for Adzuna and one key for
+Reed; you only need the one for the source you actually use.
 
 **You do not need both.** One key is enough to run the tool: `--source reed` or
 `--source adzuna`. If one board's registration blocks you, use the other and
@@ -14,10 +17,12 @@ that names the variable, rather than a traceback.
 
 ---
 
-## Adzuna (free)
+## Adzuna (free to register, evaluation-only until paid)
 
 1. Go to **https://developer.adzuna.com/signup**
-2. Register with an email address and a password. There is no approval step.
+2. Register with an email address and a password. The account exists immediately,
+   on the **Pending Activation** plan: **25 test calls**, enough to evaluate the
+   data but not to run a pipeline.
 3. Sign in and open **https://developer.adzuna.com/**; your dashboard shows
    **App ID** and **App Key** under "API access details".
 4. Copy both values. They are two different strings; `ADZUNA_APP_ID` is not the
@@ -29,9 +34,17 @@ export ADZUNA_APP_ID='your-app-id'
 export ADZUNA_APP_KEY='your-app-key'
 ```
 
-The free tier has a daily call allowance (shown on the dashboard, and subject to
-change). The tool makes one request per page of up to 50 results, so a default
-25-result search is one call.
+**Call budgeting.** The tool makes one request per page of up to 50 results, so
+a default 25-result search is one call. The 25 evaluation calls therefore buy
+roughly 25 searches — enough to compare Adzuna's coverage against Reed, not an
+ongoing pipeline. Full access is a paid subscription; the limits are shown in
+your account and Adzuna may vary them.
+
+**Licensing.** Adzuna's terms permit personal job search and personal or
+academic research. Any product or service that generates revenue or leads needs
+a separate licence agreement, and commercial trial use is capped at 14 days.
+Running this tool for your own job hunt is the permitted case; reselling it, or
+building a paid product on it, is not — get the licence first.
 
 **What Adzuna gives you:** aggregated adverts from many UK boards, with salary
 fields (sometimes estimated) and a truncated description. See
