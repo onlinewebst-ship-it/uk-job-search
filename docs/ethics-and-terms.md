@@ -9,8 +9,9 @@ authoritative version, and are the ones you accepted when you signed up.
 
 ## 1. Respect rate limits
 
-- Both providers cap requests. Adzuna's free tier has a daily allowance shown on
-  your dashboard; Reed applies its own limits and returns HTTP 429 when you
+- Both providers cap requests. Adzuna's account starts on a 25-call evaluation
+  plan and moves to a paid allowance when you subscribe — the figures are on
+  your dashboard. Reed applies its own limits and returns HTTP 429 when you
   exceed them.
 - The tool makes one request per page of results. `--limit 25` is one call; a
   large `--limit` with Adzuna pages through results in blocks of 50.
