@@ -18,7 +18,7 @@ import hashlib
 from dataclasses import asdict, dataclass, field
 from typing import Any, Dict, Optional
 
-SOURCE_NAMES = ("adzuna", "reed")
+SOURCE_NAMES = ("adzuna", "reed", "greenhouse", "ashby", "lever")
 CONTRACT_TYPES = ("permanent", "contract", "temporary", "unknown")
 CONTRACT_TIMES = ("full_time", "part_time", "unknown")
 

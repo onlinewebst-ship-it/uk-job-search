@@ -34,6 +34,7 @@ class SearchRequest:
     salary_min: Optional[int] = None
     category: Optional[str] = None
     distance: Optional[int] = None
+    orgs: Optional[Sequence[str]] = None
 
 
 def search_source(client: Source, request: SearchRequest) -> List[Posting]:
@@ -54,6 +55,13 @@ def search_source(client: Source, request: SearchRequest) -> List[Posting]:
             limit=request.limit,
             distance=request.distance,
             salary_min=request.salary_min,
+        )
+    if client.name in ("greenhouse", "ashby", "lever"):
+        return client.search(  # type: ignore[call-arg]
+            request.query,
+            request.location,
+            limit=request.limit,
+            orgs=request.orgs,
         )
     raise UsageError("No search mapping for source {!r}".format(client.name))
 

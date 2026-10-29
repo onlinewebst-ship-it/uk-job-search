@@ -89,7 +89,9 @@ def build_parser() -> argparse.ArgumentParser:
         ),
         epilog=(
             "Sources: {}. Keys: see docs/getting-keys.md. "
-            "Not affiliated with Adzuna or Reed.".format(", ".join(SOURCE_NAMES))
+            "Not affiliated with Adzuna, Reed, Greenhouse, Ashby or Lever.".format(
+                ", ".join(SOURCE_NAMES)
+            )
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
@@ -173,6 +175,17 @@ def _add_search(subparsers: argparse._SubParsersAction) -> None:  # type: ignore
         type=_int_at_least(0),
         metavar="MILES",
         help="Reed distance from --location in miles (Reed default: 10)",
+    )
+    parser.add_argument(
+        "--org",
+        dest="orgs",
+        action="append",
+        metavar="SLUG",
+        default=None,
+        help=(
+            "extra ATS employer slug (repeatable); only valid with --source "
+            "greenhouse, ashby or lever. Defaults come from data/ats-boards.json"
+        ),
     )
     parser.add_argument(
         "--include-seen",
@@ -288,6 +301,11 @@ def cmd_search(args: argparse.Namespace) -> int:
         raise UsageError(
             "--country is an Adzuna parameter. Add --source adzuna, or drop it."
         )
+    if args.orgs and not ({"greenhouse", "ashby", "lever"} & set(args.sources)):
+        raise UsageError(
+            "--org is an ATS parameter. Add --source greenhouse, ashby or lever, "
+            "or drop it."
+        )
 
     clients = []
     for name in args.sources:
@@ -304,6 +322,7 @@ def cmd_search(args: argparse.Namespace) -> int:
         salary_min=args.salary_min,
         category=args.category,
         distance=args.distance,
+        orgs=args.orgs,
     )
     postings, per_source = search_all(clients, request)
 

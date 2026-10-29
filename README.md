@@ -60,8 +60,14 @@ python3 -m jobsearch --help
 # Search one board, whole UK
 python3 -m jobsearch search --source reed --query "AI trainer"
 
-# Search both, merge and de-duplicate, store what is new
+# Search both boards, merge and de-duplicate, store what is new
 python3 -m jobsearch search --source adzuna --source reed --query "AI trainer" --limit 50
+
+# Company careers pages: no key, no signup. Uses data/ats-boards.json
+python3 -m jobsearch search --source greenhouse --source ashby --query "engineer"
+
+# Add one employer for this run only (the slug in its careers-page URL)
+python3 -m jobsearch search --source ashby --query "evaluation" --org mistral
 
 # Look at the new postings without writing anything
 python3 -m jobsearch search --source adzuna --query "evaluation" --no-save
@@ -82,6 +88,34 @@ python3 -m jobsearch shortlist --json
 `search` writes new postings to `state/seen.json` and prints only the ones it had
 not seen before, so a daily run is a digest rather than the same list again. The
 state file is plain JSON, keyed by a stable hash of `(source, provider id)`.
+
+## Sources
+
+There are two kinds of source, and they behave differently.
+
+| Source | Key | What it is | Notes |
+| --- | --- | --- | --- |
+| `reed` | free API key | Job board | UK only. The search endpoint returns no contract fields, so part-time/contract filtering has little to work with. |
+| `adzuna` | free to register, **paid for volume** (25 test calls, then a subscription) | Aggregator | 20 countries. Carries contract type and part-time, and estimated salaries. |
+| `greenhouse`, `ashby`, `lever` | **none** | Employer ATS | A company's own careers page. Fetched whole, then filtered locally. |
+
+**Why the ATS sources matter.** Adzuna and Reed search an index; Greenhouse,
+Ashby and Lever *are* the employer's vacancy list. There is no query parameter
+and no key, so the tool fetches each configured board and filters for you:
+every keyword word must appear in title or description, and the location filter
+keeps UK, UK-city, EMEA and worldwide-remote postings while dropping roles tied
+to another country.
+
+The employer list is `data/ats-boards.json`, mapping each provider's slug to a
+display name. Edit it freely, point `UKJOBSEARCH_ATS_BOARDS` at your own file, or
+add one employer for a single run with `--org <slug>`. One request is made per
+board per search, and a board that fails is named in the error rather than
+silently skipped.
+
+Caveat: Greenhouse's board endpoint exposes `updated_at` (last touched), not the
+original posting date. Ashby and Lever give true publication dates. The stored
+`extra.date_source` says which was used, so treat Greenhouse freshness as weak
+evidence.
 
 ## Commands
 
@@ -193,10 +227,11 @@ Fully offline, no keys, no network:
 python3 -m unittest discover -s tests -v
 ```
 
-192 tests cover response parsing for both boards, query construction and
+214 tests cover response parsing for all five sources, query construction and
 authentication, missing-key errors, state idempotency and durability, every
-filter, the scoring arithmetic, de-duplication, the integrity gate, and the CLI
-end to end (including the JSON error contract).
+filter, the scoring arithmetic, de-duplication, the integrity gate, the ATS
+board and location filtering, and the CLI end to end (including the JSON error
+contract).
 
 ## Layout
 

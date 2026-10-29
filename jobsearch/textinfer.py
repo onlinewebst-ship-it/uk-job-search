@@ -145,7 +145,8 @@ WHOLE_UK_NAMES = frozenset(
 def is_whole_uk(location: str) -> bool:
     """True when a location means "the whole UK" rather than a place.
 
-    Both boards are UK-only in this framework, and sending ``where``/
+    Adzuna and Reed are UK-only in this framework (the ATS sources are not), and
+    sending ``where``/
     ``locationName`` a country name makes their geocoders guess. Omitting the
     parameter is the reliable way to search the entire country.
     """

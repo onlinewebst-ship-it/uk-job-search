@@ -1,0 +1,23 @@
+{
+  "_comment": "Employer board slugs for the ATS sources (greenhouse, ashby, lever). No API key is needed: each slug is the company identifier in its careers-page URL. Add or remove companies freely; one HTTP request is made per board per search. All slugs below were verified to return live vacancies on 27 October 2026.",
+  "greenhouse": {
+    "anthropic": "Anthropic",
+    "databricks": "Databricks",
+    "scaleai": "Scale AI",
+    "figma": "Figma",
+    "monzo": "Monzo"
+  },
+  "ashby": {
+    "openai": "OpenAI",
+    "cohere": "Cohere",
+    "elevenlabs": "ElevenLabs",
+    "perplexity": "Perplexity",
+    "sierra": "Sierra",
+    "harvey": "Harvey",
+    "suno": "Suno"
+  },
+  "lever": {
+    "palantir": "Palantir",
+    "spotify": "Spotify"
+  }
+}

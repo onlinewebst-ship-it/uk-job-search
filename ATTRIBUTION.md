@@ -28,6 +28,10 @@ were adapted; everything in `jobsearch/` was written for this repository.
 - The Adzuna and Reed clients, written against each provider's published API
   documentation, including Reed's HTTP Basic auth with a blank password and
   Adzuna's paging behaviour.
+- The Greenhouse, Ashby and Lever clients: whole-board fetch, local keyword
+  matching that requires every query word, UK/EMEA-aware location filtering, and
+  the employment-type mapping, written against each provider's public board
+  endpoint (none of which requires a key).
 - The deterministic scoring arithmetic (keyword 45, freshness 20, salary
   presence 20, remote 15) and the filter semantics, including the documented
   treatment of unknown dates and unknown salaries.
@@ -40,10 +44,19 @@ were adapted; everything in `jobsearch/` was written for this repository.
 
 - Adzuna data and API: Adzuna Ltd, <https://www.adzuna.com>. Not affiliated.
 - Reed data and API: Reed Online Ltd, <https://www.reed.co.uk>. Not affiliated.
+- Greenhouse job-board data and API: Greenhouse Software, Inc.,
+  <https://developers.greenhouse.io>. Not affiliated.
+- Ashby job-posting data and API: Ashby, <https://developers.ashbyhq.com>. Not
+  affiliated.
+- Lever postings data and API: Lever, <https://github.com/lever/postings-api>.
+  Not affiliated.
 
-Adzuna and Reed are trademarks of their respective owners. This project claims
-no rights over their data. Users obtain their own API keys and are bound by the
-providers' terms; see `docs/ethics-and-terms.md`.
+Adzuna, Reed, Greenhouse, Ashby and Lever are trademarks of their respective
+owners. This project claims no rights over their data. Users obtain their own API
+keys where one is required and are bound by the providers' terms; see
+`docs/ethics-and-terms.md`. Company names in `data/ats-boards.json` identify
+employers so that their public vacancy boards can be read; they do not imply any
+relationship with this project.
 
 ## Licence
 

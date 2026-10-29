@@ -10,10 +10,17 @@ from typing import Dict, Type
 
 from ..errors import UsageError
 from .adzuna import Adzuna
+from .ats import ATS_NAMES, Ashby, Greenhouse, Lever
 from .base import Source
 from .reed import Reed
 
-SOURCES: Dict[str, Type[Source]] = {"adzuna": Adzuna, "reed": Reed}
+SOURCES: Dict[str, Type[Source]] = {
+    "adzuna": Adzuna,
+    "reed": Reed,
+    "greenhouse": Greenhouse,
+    "ashby": Ashby,
+    "lever": Lever,
+}
 SOURCE_NAMES = tuple(SOURCES)
 
 
@@ -28,4 +35,15 @@ def get_source(name: str, **kwargs: object) -> Source:
     return SOURCES[key](**kwargs)  # type: ignore[arg-type]
 
 
-__all__ = ["Adzuna", "Reed", "Source", "SOURCES", "SOURCE_NAMES", "get_source"]
+__all__ = [
+    "Adzuna",
+    "Ashby",
+    "ATS_NAMES",
+    "Greenhouse",
+    "Lever",
+    "Reed",
+    "Source",
+    "SOURCES",
+    "SOURCE_NAMES",
+    "get_source",
+]
